@@ -1,0 +1,22 @@
+{
+  "name": "hospital-ims",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Hospital information management system with shared web and desktop access",
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "node --test --test-concurrency=1 tests/*.test.js",
+    "test:ui": "node tests/browser.mjs",
+    "test:desktop": "node tests/desktop.mjs",
+    "check": "node --check server/index.js && node --check server/store.js && node --check server/inpatient.js && node --check public/app.js && node --check desktop/main.cjs && node --check desktop/launch.cjs",
+    "desktop": "node desktop/launch.cjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "electron": "^44.3.0"
+  }
+}
